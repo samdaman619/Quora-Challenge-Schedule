@@ -1,0 +1,42 @@
+Problem Statement:
+
+At Quora, we run all our unit tests across many machines in a test
+cluster on every code push.
+
+One day, we decided to see if we could optimize our test cluster
+for cost efficiency by using only one machine to run all N tests.
+
+Suppose we know two things about each test: the time needed to run
+this test, Ti, and the probability that this test will pass, Pi.
+
+Given these as input, come up with the minimum expected time (based on
+the optimal ordering of the tests) of getting “go or no go” feedback
+on the code push, i.e. the expected time when we understand that either
+i) at least one test has failed, or that ii) all tests have passed.
+
+
+Constraints:
+Accuracy threshold for evaluating floats: 10−6
+1≤N≤100
+1≤Ti≤100
+0≤Pi≤1
+
+
+Input Format:
+Line 1: One integer N
+Line 2..N+1: One integer Ti and one float Pi separated by one space.
+
+
+Output Format:
+Line 1: One float, the minimum expected time
+
+
+Sample Input:
+3
+3 0.1
+7 0.5
+9 0.2
+
+
+Sample Output:
+4.04
