@@ -9,6 +9,6 @@ interest NOT to copy ANY of the source code you see here. Quora checks for code
 similarities from previously submitted version, so you will be noticed and punished.
 
 Description:
-This program is a solution which I derived according to one of the challenges found
-at www.quora.com/challenges. The title for this challenge is "Schedule." I have also
-included a .txt file with a description of the challenge within this repo for convenience.
+This program is a solution which I derived to solve one of the challenges found at
+www.quora.com/challenges. The title for this challenge is "Schedule." I have also
+included a .txt file describing the challenge in this repo for convenience.
