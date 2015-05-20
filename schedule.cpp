@@ -19,7 +19,6 @@
 #include <iostream>
 #include <algorithm>
 #include <limits>
-#include <iomanip>
 
 using namespace std;
 
@@ -28,16 +27,37 @@ int *order;         //optimal order of tests
 int *timeNeeded;    //time needed for each test
 float *passRate;    //probability of each test passing
 
-/* Stores input */
-void storeInput() {
+/* Prompts user for input needed to simulate running tests */
+void promptUserInput() {
+    numTests=0;
+    cout << "How many tests to run?" << endl;
     cin >> numTests;
+    while (numTests > 100 || numTests < 1) {
+        cout << "Enter a number between 1 - 100" << endl;
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cin >> numTests;
+    }
     
     order = (int *)calloc(numTests, sizeof(int));
     timeNeeded = (int *)calloc(numTests, sizeof(int));
     passRate = (float *)calloc(numTests, sizeof(float));
     
-    for (int i=0; i<numTests; i++)  //get info for each test
+    for (int i=0; i<numTests; i++) {        //get info for each test
+        cout << "Test " << i+1 << " info? (time/ pass rate)" << endl;
         cin >> timeNeeded[i] >> passRate[i];
+        while (timeNeeded[i] > 100 || timeNeeded[i] < 1 || passRate[i] > 1 || passRate[i] < 0) {
+            cout << endl;
+            if (timeNeeded[i] > 100 || timeNeeded[i] < 1)
+                cout << "**Choose a time between 1-100" << endl;
+            if (passRate[i] > 1 || passRate[i] < 0)
+                cout << "**Choose a pass rate between 0-1" << endl;
+            cout << "Re-enter Test " << i+1 << " info: (time/ pass rate)" << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cin >> timeNeeded[i] >> passRate[i];
+        }
+    }
 }
 
 /* Determines optimal order by calculating which tests have higher rate of failing per second */
@@ -50,7 +70,7 @@ void determineOrder() {
     for (int i=0; i < numTests; i++)        //loop through failPerSec[]
         for (int j=0; j < numTests; j++)    //loop to match failPerSec[i] with corresponding test#
             if (failPerSec[i] == (1-passRate[j])/((float)timeNeeded[j])) {
-                order[i] = j;   //store next optimal test
+                order[i] = j;
                 break;
             }
 }
@@ -63,16 +83,16 @@ float runSimulation() {
     for (int i=0; i < numTests; i++) {
         timeRan += timeNeeded[order[i]];
         timeExpected += timeRan * chanceToRun * (1-passRate[order[i]]);    //expected time for test 'i' to run
-        chanceToRun -= (chanceToRun * (1 - passRate[order[i]]));  //decrement by the %chance test ran and failed
+        chanceToRun -= (chanceToRun * (1 - passRate[order[i]]));  //decrement by the %chance of last test failing
     }
     timeExpected += timeRan * chanceToRun;    //expected time if all tests succeeded
     return timeExpected;
 }
 
 int main() {
-    storeInput();
+    promptUserInput();
     determineOrder();
     float timeExpected = runSimulation();
-    cout << timeExpected << endl;
+    cout << endl << "Expected Time: " << timeExpected << endl;
     return 0;
 }
