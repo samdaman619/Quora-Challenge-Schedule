@@ -1,19 +1,22 @@
 /*
- Copyright 2015 Sami Badra
+ Sami Badra
+ 
+ May 7, 2015
+ Quora Challenge (Schedule)
+ FILE: schedule.cpp
+ 
+ Challenege description may be found in this GitHub Repository,
+ or by visiting www.quora.com/challenges
+ 
+ Copyright (c) 2015 Sami Badra. All rights reserved.
  
  DISCLAIMER: Any unauthorized use, including but not limited to, copying or
  redistributing any chunk of the source code (or an entire file) will result in
  punishment by law. I, Sami Badra,own all rights to the files and their contents.
  
- P.S. This source code has already been submitted to Quora, so it is in your best
+ This source code has already been submitted to Quora, so it is in your best
  interest NOT to copy ANY of the source code you see here. Quora checks for code
  similarities from previously submitted version.You will be noticed and punished.
- 
- schedule.cpp
- Quora_challenge_schedule
- 
- Prompt description found at www.quora.com/challenges
- Challenge Title: Schedule
  */
 
 #include <iostream>
