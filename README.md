@@ -1,7 +1,5 @@
-Copyright 2015 Sami Badra. All Rights Reserved
-
-Sami Badra
-
+Copyright 2015 Sami Badra. All Rights Reserved  
+Sami Badra  
 Spring 2015
 
 ##Description
