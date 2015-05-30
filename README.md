@@ -8,4 +8,4 @@ This program is a solution I developed to solve one of the challenges that was r
 This challenge has sharpened my ability to analyze and solve complex problems, while also displaying my strong algorithimic skills.
 
 ![Schedule Challenge Description]
-(https://github.com/samibadra/Quora-Challenge-Schedule.git/Schedule_Desc.png)
+(https://raw.githubusercontent.com/samibadra/Quora-Challenge-Schedule/master/Schedule_Desc.png)
