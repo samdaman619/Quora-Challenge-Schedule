@@ -5,4 +5,7 @@ Spring 2015
 ##Description
 This program is a solution I developed to solve one of the challenges that was recently removed from the list of challenges found at www.quora.com/challenges. I included a screen shot of the challenge prompt in this repository.
 
-I believe my solution for this challenge especially highlights my ability to analyze and solve complex problems, while also displaying my strong algorithimic skills.
+This challenge has sharpened my ability to analyze and solve complex problems, while also displaying my strong algorithimic skills.
+
+![Schedule Challenge Description]
+(https://github.com/samibadra/Quora-Challenge-Schedule.git/Schedule_Desc.png)
